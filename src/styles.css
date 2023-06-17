@@ -10,6 +10,10 @@ body {
 }
 
 button {
+    cursor: pointer;
+}
+
+button#start {
     padding: 25px 50px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
@@ -19,10 +23,92 @@ button {
     box-shadow: 0px 0px 10px 0 #3030ea;
 }
 
-button:hover {
+button#start:hover {
     cursor: pointer;
     transition: .3s;
     background: rgb(0, 46, 250);
     box-shadow: 0px 0px 20px 10px #a0a0fb;
     color: white;
+}
+
+.modal-content {
+    padding: 50px;
+    border-radius: 8px;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 8px 0 #3030ea, inset 0 0 8px 0 #3030ea;
+}
+
+section#top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center
+}
+
+section#bottom {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+button#bottom {
+    border: none;
+    background: none;
+    text-align: left;
+    padding-top: 10px;
+}
+
+button#bottom:hover {
+    color: #3030ea;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+#password, #username {
+    display: flex;
+    justify-content: space-around;
+}
+
+label {
+    width: 50px;
+}
+
+button#login {
+    margin-top: 20px;
+    border: none;
+    background: none;
+    padding: 10px;
+    border-radius: 8px;
+    background: #3030ea38;
+}
+
+button#login:hover {
+    background: #6363df;
+    color: white;
+    box-shadow: #6363df 0px 0px 10px 0px;
+    transition: .3s;
+}
+
+button#close {
+    border: none;
+    background: none;
+    font-size: 40px;
+}
+
+button#close:hover {
+    transform: scale(1.5);
+    transition: .3s;
+}
+
+input {
+    border-radius: 8px;
+    padding: 5px;
+    border: 1px solid black;
 }

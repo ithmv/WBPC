@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import Modal from './Modal.jsx';
+import React, { useState } from 'react';
 
-const Button = ({ onClick }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    if (isModalOpen) {
+const Button = ({ onClick, isModalOpen }) => {
+  const handleButtonClick = () => {
+    if (!isModalOpen) {
       onClick();
     }
-  }, [isModalOpen, onClick]);
-
-  const handleButtonClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
   };
 
   return (
     <>
-      {!isModalOpen && <button onClick={handleButtonClick}>Войти</button>}
-      {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal} />}
+      {!isModalOpen && <button onClick={handleButtonClick} id='start'>Войти</button>}
     </>
   );
 };
