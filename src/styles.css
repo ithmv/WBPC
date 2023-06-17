@@ -1,0 +1,28 @@
+body {
+    margin: 0 auto;
+    width: 1000px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+button {
+    padding: 25px 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    background: rgb(201, 211, 255);
+    box-shadow: 0px 0px 10px 0 #3030ea;
+}
+
+button:hover {
+    cursor: pointer;
+    transition: .3s;
+    background: rgb(0, 46, 250);
+    box-shadow: 0px 0px 20px 10px #a0a0fb;
+    color: white;
+}
