@@ -38,6 +38,8 @@ button#start:hover {
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 8px 0 #3030ea, inset 0 0 8px 0 #3030ea;
+    width: 400px;
+    height: 400px;
 }
 
 section#top {
@@ -111,4 +113,20 @@ input {
     border-radius: 8px;
     padding: 5px;
     border: 1px solid black;
+}
+
+.modal-content#forgot{
+    position: absolute;
+    top: 35%;
+    background: white;
+    width: 400px;
+    height: 300px;
+}
+
+.modal-content#registration{
+    position: absolute;
+    top: 35%;
+    background: white;
+    width: 400px;
+    height: 300px;
 }

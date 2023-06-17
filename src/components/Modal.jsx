@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import ForgotPasswordModal from './ForgotPasswordModal.jsx';
+import RegistrationModal from './RegistrationModal.jsx';
 
 const Modal = ({ isOpen, onClose }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] = useState(false);
+  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -18,22 +22,29 @@ const Modal = ({ isOpen, onClose }) => {
   };
 
   const handleForgotPassword = () => {
-    console.log('Забыли пароль');
+    setIsForgotPasswordModalOpen(true);
+  };
+
+  const handleCloseForgotPasswordModal = () => {
+    setIsForgotPasswordModalOpen(false);
   };
 
   const handleRegistration = () => {
-    console.log('Регистрация');
+    setIsRegistrationModalOpen(true);
+  };
+
+  const handleCloseRegistrationModal = () => {
+    setIsRegistrationModalOpen(false);
   };
 
   return (
     <div className={`modal ${isOpen ? 'open' : ''}`}>
       <div className="modal-content">
         <section id='top'>
-        <h1>Web App</h1>
-        <button id='close' onClick={onClose}>❌</button>
+          <h1>Web App</h1>
+          <button id='close' onClick={onClose}>❌</button>
         </section>
 
-        
         <h2>Войдите в свой профиль</h2>
         <form onSubmit={handleLogin}>
           <div id='username'>
@@ -61,8 +72,15 @@ const Modal = ({ isOpen, onClose }) => {
           <button id='bottom' onClick={handleForgotPassword}>Забыли пароль?</button>
           <button id='bottom' onClick={handleRegistration}>Регистрация</button>
         </section>
-
       </div>
+
+      {isForgotPasswordModalOpen && (
+        <ForgotPasswordModal isOpen={isForgotPasswordModalOpen} onClose={handleCloseForgotPasswordModal} />
+      )}
+
+      {isRegistrationModalOpen && (
+        <RegistrationModal isOpen={isRegistrationModalOpen} onClose={handleCloseRegistrationModal} />
+      )}
     </div>
   );
 };
